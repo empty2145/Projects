@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <button class="js-button-button" onclick="
+        changeTexto();
+    ">Add to cart</button>
+    <button class="add-button" onclick="
+        messages++;
+        displayNotification();
+    ">Add</button>
+    <button class="remove-button" onclick="
+        if (messages > 0) {
+            messages--;
+            if (messages === 0) {
+                stopNotification();
+            }
+        }
+    ">Remove</button>
+    <p class="js-text"></p>
+    <script> /*
+        const object1 = {
+            num: 2,
+            fun: function() {
+                console.log('hello')
+            }
+        };
+
+        object1.fun()
+        */
+        /*
+        setTimeout( function() {
+            console.log('timeout');
+        }, 3000);
+
+        setInterval(function() {
+            console.log('interval');
+        }, 3000);
+        console.log('next line2')
+        */
+        /*
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function(value, indes) {
+            if (value === 'wash dishes') {
+                return;
+            }
+            console.log(value);
+        })
+        *//*
+        let add = function() {
+            console.log(7+3);
+        }
+        
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+        runTwice(add)
+        */
+       /*
+        let var1;
+        let variable1 = document.querySelector('.js-button-button')
+        let variable2 = document.querySelector('.js-text')
+        function changeTexto() {
+            
+            variable2.innerText = 'Added'
+
+            clearTimeout(var1);
+            
+            var1 = setTimeout(function() {
+                variable2.innerText = '';
+            }, 2000)
+        }
+        */
+       
+        let messages = 2;
+
+        let intervalID;
+
+        let isDisplayingNotification;
+
+        displayNotification();
+
+        function displayNotification() {
+            if (isDisplayingNotification) {
+                return;
+            }
+
+            isDisplayingNotification = true;
+
+
+            intervalID = setInterval(function() {
+            if (document.title === 'App') {
+                document.title = `(${messages}) New messages`;
+            } else {
+                document.title = 'App';
+            }
+
+        }, 1000)
+
+        }
+
+
+        function stopNotification() {
+            isDisplayingNotification = false;
+
+            clearInterval(intervalID);
+            document.title = 'App';
+        }
+
+        
+        
+    </script>
+</body>
+</html>

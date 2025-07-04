@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="js-texxt">text</p>
+    <input onkeydown="
+        updatePage(value);
+    ">
+
+    <script>
+        function updatePage(value) {
+            document.querySelector('.js-texxt').innerText = value
+        }
+    </script>
+</body>
+</html>

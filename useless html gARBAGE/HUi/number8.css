@@ -1,0 +1,22 @@
+a:link{
+    color: tomato;
+}
+a:visited{
+    color: palevioletred;
+}
+a:hover{
+    color:chartreuse
+}
+a:active{
+    color: yellow;
+}
+a{
+    font-size: 100px;
+}
+button:hover{
+    background-color: lightsalmon;
+}
+button:active{
+    background-color: black;
+}
+li:nth-

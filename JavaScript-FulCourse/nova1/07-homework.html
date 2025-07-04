@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howerk</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+        function greet(name) {
+            if (!name) {
+                console.log('Hello there!');
+            } else {
+                console.log(`Hello ${name}!`);
+
+            }
+        }
+
+        greet('');
+        greet('Damian');
+        greet('Damian');
+        */
+
+        /*function convertToFahrenheit(celsius) {
+            const Fahrenheit = (celsius * 9 / 5) + 32
+            return Fahrenheit;
+            
+        }
+        console.log(convertToFahrenheit(0));
+        console.log(convertToFahrenheit(30));
+        console.log(convertToFahrenheit(100));
+        */
+       function convertTemperature(degrees, unit) {
+        let temp;
+        if (unit === 'C') {
+            temp = (degrees * 9 / 5) + 32;
+        } else if (unit === 'F') {
+            temp = (degrees - 32) *5 / 9;
+        } else {
+            return 'Your are invalid'
+        }
+        return temp;
+       }
+       console.log(convertTemperature(32, 'C'));
+       console.log(convertTemperature(100, 'F'));
+    </script>
+</body>
+</html>

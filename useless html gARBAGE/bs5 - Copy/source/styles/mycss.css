@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Michroma&display=swap");
+
+
+
+
+body {
+    font-family: Michroma, serif;
+    background: linear-gradient(#090122 43%, #160181 99%);
+}
+p {
+    color: aquamarine;
+}
+
+.nav-link {
+    color: aqua;
+}
+.navbar-nav .nav-link.active {
+    color: navy;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.navbar-toggler {
+    background-color: gray;
+}
+.card img {
+    width: 100%;
+    height: 300px;
+
+}
+.sidebar {
+    color: aquamarine;
+    background: linear-gradient(90deg , #090122 43%, #2b00ff 99%);
+}
+.card {
+    background: linear-gradient(90deg , #090122 43%, #2b00ff 99%);
+    color: aquamarine;
+    padding: 3px;
+
+}
+.card a {
+    text-decoration: none;
+    color: aquamarine;
+}
+.slide-text,
+.footer-text {
+    color: aquamarine;
+    margin: auto auto;
+
+}
+footer,
+.btn-outline-primary {
+    background: linear-gradient(90deg , #090122 43%, #2b00ff 99%);
+
+
+}
+.media-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.call {
+    animation: myAnim 4s ease-in-out 1s infinite reverse forwards;
+}
+.carousel-item {
+    height: 100%;
+}
+.d-block {
+    width: 100%;
+    height: 100%;
+}
+.gam {
+    height: 100%;
+}
+
+
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
+
+@media (max-width: 755px) {
+    .carousel-indicators {
+        display: none;
+
+        
+    }
+}
+/* Press Start 2P */

@@ -1,0 +1,10 @@
+.page {
+    display: inline-block;
+    border-style: solid;
+    border-width: 0.5px;
+}
+.page>table>tr {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: aqua;
+}

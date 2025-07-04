@@ -1,0 +1,19 @@
+.container {
+    background-color: aqua;
+    text-align: center;
+    display: inline-block;
+}
+body {
+    margin: 0px;
+}
+.maxim {
+    text-align: center;
+}
+
+
+
+
+p {
+    background-color: green;
+    font-size: 24;
+}

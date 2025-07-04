@@ -1,0 +1,33 @@
+.js-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.js-button-2 {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.js-button-3 {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+.is-toggled {
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+.is-toggled-2 {
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+.is-toggled-3 {
+    background-color: rgb(240, 240, 240);
+    color: black;
+}

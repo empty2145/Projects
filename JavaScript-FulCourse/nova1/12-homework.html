@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homuworku</title>
+</head>
+<body>
+    <script>
+        /*
+        const multiply = (a, b) => a * b;
+        
+
+        function countPositive(nums) {
+            let count = 0;
+            nums.forEach((num) => {
+                
+                if (num > 0) {
+                    count++;
+                }
+                
+            });
+            return count;
+        }
+
+        console.log(countPositive([1, -3, 5]))
+        */
+
+        function addNum(array, num) {
+            return array.map((value) => value + num)
+        }
+
+        //console.log(addNum([1, -3, 5], 2))
+        function removeEgg(foods) {
+            let eggsRemoved = 0;
+            return foods.filter((food) => {
+                if (food === 'egg' && eggsRemoved < 2) {
+                    eggsRemoved++;
+                    return false;
+                }
+                return true;
+                food !== 'egg'
+            });
+        }
+        console.log(removeEgg(['egg', 'spinache', 'ugh', 'egg', 'egg']));
+
+
+    </script>
+</body>
+</html>

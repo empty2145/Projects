@@ -1,0 +1,14 @@
+.main.border-div {
+    background-color: chartreuse;
+    border-style: dotted;
+}
+.main {
+    background-color: tomato;
+}
+.border-div {
+    border-style: solid !important;
+}
+
+.main p {
+    font-size: 35px;
+}

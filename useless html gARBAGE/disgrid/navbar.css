@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    background-color: rgb(31, 31, 31);
+}
+.nav-list {
+    display: flex;
+}
+.nav-list a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color:  ghostwhite;
+}
+
+
+.nav-list a:hover {
+    background-color: rgb(64, 64, 64);
+
+}
+
+.nav-btn {
+    display: none;
+}
+
+
+@media (max-width: 1000px) {
+    .nav-btn {
+        font-size: 2em;
+        padding-inline: 10px;
+        padding-bottom: 3px;
+        border: none;
+        background-color: rgb(31, 31, 31);
+        color: white;
+        display: block;
+        cursor: pointer;
+    }
+    .nav-list {
+        display: none;
+    }
+
+    .nav-btn:hover {
+        background-color: rgb(64, 64, 64);
+    }
+
+
+    .drop:hover .nav-list {
+        display: block;
+        position: absolute;
+        right: 2px;
+        background-color: rgb(31, 31, 31);
+    
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+}

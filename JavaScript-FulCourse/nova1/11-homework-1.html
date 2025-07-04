@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let array1 = [10, 20, 30];
+        let array2 = ['Good Morning', ['Hello', 'Good bye']]
+        let array3 = [-10, -20, -30]
+        array1[array1.length-1] = 99;
+        console.log(array1);
+        function getLastValue(array) {
+            return array[array.length -1]
+        }
+        
+        console.log(getLastValue(array1));
+        console.log(getLastValue(array2));
+
+        function arraySwap(array) {
+            let firstValue = array[0]
+            array[0] = array[array.length - 1]
+            array[array.length - 1] = firstValue
+        }
+        arraySwap(array1);
+        console.log(array1);
+/*
+        for (let i = 0; i < 11;i += 2) {
+            console.log(i);
+        }
+        let Double = []
+        for (let i = 0; i < array1.length; i++) {
+            const nums = array1[i] + 1;
+            Double.push(nums)
+        }
+        console.log(Double);
+        */
+
+       function addNum(array, num) {
+        let Double = []
+        for (let i = 0; i < array.length; i++) {
+            const nums = array[i] + num;
+            Double.push(nums)
+            
+        }
+        return Double;
+       }
+       console.log(addNum(array1, 5));
+
+       function addArrays(first, second) {
+        let Doable = []
+        for (let i = 0; i < first.length; i++) {
+            const nums = first[i] + second[i];
+            Doable.push(nums)
+            
+        }
+        return Doable;
+       }
+       addArrays(array1, array3);
+        console.log(addArrays(array1, array3));
+
+    </script>
+</body>
+</html>

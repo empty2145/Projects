@@ -1,0 +1,15 @@
+.conteiner {
+    flex-direction: row;
+    background-color: maroon;
+    display: flex;
+    justify-content: space-between;
+}
+.conteiner>img{
+    width: 300px;
+}
+
+
+p {
+    background-color: green;
+    font-size: 24;
+}

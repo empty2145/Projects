@@ -1,0 +1,168 @@
+.navbar {
+    display: flex;
+    background-color: rgb(31, 31, 31);
+}
+.nav-list {
+    display: flex;
+}
+.nav-list a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color:  ghostwhite;
+}
+
+
+.nav-list a:hover {
+    background-color: rgb(64, 64, 64);
+
+}
+
+.nav-btn {
+    display: none;
+}
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1);
+    background-color: black;
+}
+.left-bar {
+    grid-column: 1/3;
+
+}
+.left-bar>.lef img {
+    width: 100%;
+
+}
+.left-bar>.lef video {
+    width: 100%;
+
+}
+
+.container {
+    grid-column: 3/11;
+
+}
+.container>.avi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container>.avi video {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.container>.avi audio {
+    position: absolute;
+    left: 50%;
+    top: 390px;
+    transform: translateX(-50%);
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    
+}
+.container>.abli {
+    position: absolute;
+    top: 460px;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+.container>.abli>.mabli {
+    background-color: violet;
+
+
+}
+.container>.abli>.mabli tr {
+    border: 3px;
+    border-style: solid;
+    background-color: darkred;
+
+
+
+}
+.container>.abli>.mabli .second {
+    border: 3px;
+    border-style: solid;
+    background-color: firebrick;
+    
+
+
+}
+.container>.abli>.mabli .third {
+    border: 3px;
+    border-style: solid;
+    background-color: crimson;
+    
+
+
+}
+.container .bot {
+    margin: 180px;
+    
+}
+
+.right-bar {
+    grid-column: 11/13;
+
+}
+.right-bar>.rig img {
+    width: 100%;
+
+}
+.right-bar>.rig video {
+    width: 100%;
+
+}
+.left-bar .lef,
+.right-bar .rig {
+    margin: 2em;
+    padding: 1em;
+    border-style: solid;
+    border-width: 0.5px;
+    color: aquamarine;
+    border-color: aquamarine;
+
+}
+
+
+@media (max-width: 1000px) {
+    .nav-btn {
+        font-size: 2em;
+        padding-inline: 10px;
+        padding-bottom: 3px;
+        border: none;
+        background-color: rgb(31, 31, 31);
+        color: white;
+        display: block;
+        cursor: pointer;
+        right: 100px;
+    }
+    .nav-list {
+        display: none;
+    }
+
+    .nav-btn:hover {
+        background-color: rgb(64, 64, 64);
+    }
+
+
+    .drop:hover .nav-list {
+        display: block;
+        position: absolute;
+        left: 4px;
+        background-color: rgb(31, 31, 31);
+
+    
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+}

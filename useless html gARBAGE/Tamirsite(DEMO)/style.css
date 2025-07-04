@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+}
+.main {
+    background-color: rgb(120, 219, 120);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+    width: 70%;
+}
+
+.sec {
+    background-color: aquamarine;
+    margin: 0;
+    display: inline-block;
+    width: 30%;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+image {
+    max-height: 50px;
+}
