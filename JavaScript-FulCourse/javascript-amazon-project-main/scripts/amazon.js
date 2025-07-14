@@ -1,4 +1,4 @@
-import {cart, addToCart} from '../data/cart.js';
+import {cart, addToCart, calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 let productsHTML = '';
@@ -66,30 +66,31 @@ const addedMessageTimeout = {};
 
 
 
-function updateCartQuantity(productId) {
-    let cartQuantity = 0;
-
-        cart.forEach((cartItem) => {
-            cartQuantity += cartItem.quantity
-        });
-
-
-        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-
-        const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`)
-
-        addedMessage.classList.add('added-to-cart-visible');
-
-        const previousTimeoutId = addedMessageTimeout[productId];
-
-        if (previousTimeoutId) {
-            clearTimeout(previousTimeoutId);
-        }
-        const timeoutId = setTimeout(() => {
-            addedMessage.classList.remove('added-to-cart-visible');
-        }, 2000);
-        addedMessageTimeout[productId] = timeoutId;
+function realCartQuantity() {
+    const cartQuantity = calculateCartQuantity();
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
+realCartQuantity();
+function updateCartQuantity(productId) {
+    const cartQuantity = calculateCartQuantity();
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
+    const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`)
+
+    addedMessage.classList.add('added-to-cart-visible');
+
+    const previousTimeoutId = addedMessageTimeout[productId];
+
+    if (previousTimeoutId) {
+        clearTimeout(previousTimeoutId);
+    }
+    const timeoutId = setTimeout(() => {
+        addedMessage.classList.remove('added-to-cart-visible');
+    }, 2000);
+    addedMessageTimeout[productId] = timeoutId;
+}
+
+
 
 document.querySelectorAll('.js-add-to-cart')
     .forEach((button) => {
