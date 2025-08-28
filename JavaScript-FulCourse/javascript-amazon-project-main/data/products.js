@@ -117,7 +117,7 @@ export function loadProducts(fun) {
 
     });
     console.log('load products');
-    fun();
+    fun;
   });
 
 
