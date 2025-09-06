@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function xyz() {
+            const xyl = new XMLHttpRequest()
+
+            xyl.addEventListener('load', () => {
+                console.log(xyl.response);
+            })
+
+            xyl.open('GET', 'https://supersimplebackend.dev/greeting');
+            xyl.send();
+            
+        }
+        function fyz() {
+            promise = fetch('https://supersimplebackend.dev/greeting').then((response) => {
+                return response.text();
+            }).then((data) => {
+                console.log(data);
+            })
+        }
+        async function ayz() {
+            const response = await fetch('https://supersimplebackend.dev/greeting')
+            const data = await response.text()
+            console.log(data)
+        }
+
+        async function apz() {
+            const response = await fetch('https://supersimplebackend.dev/greeting', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    "name": "Tamir"
+                })
+            })
+            const data = await response.text()
+            console.log(data)
+        }
+        /*
+        async function amazon() {
+            try{
+                const response = await fetch('https://amazon.com');
+                const text = await response.text();
+                console.log(text);
+            } catch (error) {
+                console.log('CORS error. Your request was blocked by the backend.')
+            }
+        }
+        */
+        async function ap() {
+            try {
+                const response = await fetch('https://supersimplebackend.dev/greeting', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.status >= 400) {
+                    throw response;
+                }
+
+                const text = await response.text();
+                console.log(text);
+            } catch (error) {
+                if (error.status === 400) {
+                    const errorMess = await error.json();
+                    console.log(errorMess);
+                } else {
+                    console.log('Network error. Please try again later.')
+                }
+            }
+        }
+        ap();
+        
+    </script>
+</body>
+</html>
