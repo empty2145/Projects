@@ -19,6 +19,7 @@ export class Product {
   name;
   rating;
   priceCents;
+  keywords;
 
   constructor(productDetails) {
     this.id = productDetails.id;
@@ -26,6 +27,7 @@ export class Product {
     this.name = productDetails.name;
     this.rating = productDetails.rating;
     this.priceCents = productDetails.priceCents;
+    this.keywords = productDetails.keywords;
   }
 
   getStarsUrl() {
@@ -144,7 +146,7 @@ export function loadProducts(fun) {
 
     });
     console.log('load products');
-    fun;
+    fun();
   });
 
 
@@ -157,7 +159,7 @@ export function loadProducts(fun) {
   xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-loadProducts();
+
 
 /*
 export const products = [

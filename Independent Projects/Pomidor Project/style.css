@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: rgb(187, 74, 74);
+    flex-direction: column;
+    margin: 0;
+    color: white;
+}
+.full-page {
+    text-align: center;
+}
+.pomi-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.table {
+    border-radius: 15px;
+    padding: 30px;
+    display: inline-block;
+    background-color: indianred;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 440px;
+    height: 300px;
+    padding: 30px;
+    
+}
+.time {
+    font-size: 110px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+p {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: transparent;
+    color: whitesmoke;
+    border: 0;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #9f4848;
+}
+.start-button {
+    background-color: white;
+    color: indianred;
+}
