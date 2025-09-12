@@ -9,6 +9,8 @@ const pomifocus = document.querySelector('.pomifocus'),
     fullPage = document.querySelector('.full-page'),
     table = document.querySelector('.table'),
     reset = document.querySelector('.reset-button'),
+    startSound = new Audio('files/photos/button-press.mp3'),
+    endSound = new Audio('files/photos/clock-alarm.mp3'),
     start = document.querySelector('.start-button');
 
 let minutes = 25;
@@ -28,6 +30,7 @@ function startTimer() {
         timer = setInterval(updateTimer, 1);
         start.innerHTML = 'Pause';
         isPaused = false;
+        startSound.play();
     } else {
         isPaused = true;
         clearInterval(timer);
@@ -39,6 +42,7 @@ function updateTimer() {
         isPaused = true;
         clearInterval(timer);
         start.innerHTML = 'Start';
+        endSound.play();
 
         if (currentMode === "pomidor") {
             sessionCount++;
