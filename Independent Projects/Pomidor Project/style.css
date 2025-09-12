@@ -1,17 +1,17 @@
 body {
-    display: flex;
+    margin: 0;
+    color: white;
+}
+.full-page {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    background-color: rgb(187, 74, 74);
     flex-direction: column;
-    margin: 0;
     color: white;
-}
-.full-page {
-    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+    overflow: hidden;
 }
 .pomi-header {
     display: flex;
@@ -24,7 +24,6 @@ body {
     border-radius: 15px;
     padding: 30px;
     display: inline-block;
-    background-color: indianred;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     min-width: 440px;
     height: 300px;
@@ -51,10 +50,58 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
-button:hover {
-    background-color: #9f4848;
+.red-theme button:hover {
+    background-color: rgb(108, 41, 41);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.cyan-theme button:hover {
+    background-color: rgb(40, 87, 96);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.blue-theme button:hover {
+    background-color: rgb(39, 59, 84);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 .start-button {
     background-color: white;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.red-theme .start-button {
     color: indianred;
+}
+.cyan-theme .start-button {
+    color: rgb(65, 142, 154);
+}
+.blue-theme .start-button {
+    color: rgb(78, 116, 154);
+}
+.red-theme {
+    text-align: center;
+    background-color: rgb(187, 74, 74);
+    width: 100vw;
+    height: 100vh;
+}
+.cyan-theme {
+    text-align: center;
+    background-color: rgb(49, 121, 130);
+    width: 100vw;
+    height: 100vh;
+}
+.blue-theme {
+    text-align: center;
+    background-color: rgb(58, 101, 144);
+    width: 100vw;
+    height: 100vh;
+}
+.red-card {
+    background-color: indianred;
+}
+.cyan-card {
+    background-color: rgb(65, 142, 154);
+}
+.blue-card{
+    background-color: rgb(78, 116, 154);
+}
+.number-of-focs {
+    margin-top: 30px;
 }
