@@ -11,6 +11,10 @@ const pomifocus = document.querySelector('.pomifocus'),
     reset = document.querySelector('.reset-button'),
     startSound = new Audio('files/photos/button-press.mp3'),
     endSound = new Audio('files/photos/clock-alarm.mp3'),
+    sgninModal = document.querySelector('.signin-modal'),
+    sgninBtn = document.querySelector('.signin-button'),
+    sgninSbmit= document.querySelector('.signin-submit'),
+    usernameInput = document.querySelector('.username-input'),
     start = document.querySelector('.start-button');
 
 let minutes = 25;
@@ -21,6 +25,11 @@ let shortBreakCount = parseInt(localStorage.getItem('shortBreakCount')) || 1;
 let longBreakCount = parseInt(localStorage.getItem('longBreakCount')) || 1;
 let currentMode = "pomidor";
 let timer;
+let username = localStorage.getItem('username') || 'Guest';
+
+if (username) {
+    pomifocus.textContent = `Welcome, ${username}!`
+}
 
 updateNumber();
 
@@ -128,6 +137,18 @@ function resetTimer() {
     localStorage.removeItem('longBreakCount');
     updateNumber();
 }
+function submitName() {
+    username = usernameInput.value.trim();
+    if (username) {
+        localStorage.setItem('username', username);
+        pomifocus.textContent = `Welcome, ${username}!`;
+        sgninModal.classList.add('hidden');
+    }
+}
+sgninBtn.addEventListener('click', () => {
+    sgninModal.classList.remove('hidden');
+})
+sgninSbmit.addEventListener('click', submitName);
 reset.addEventListener('click', resetTimer);
 start.addEventListener('click', startTimer);
 mainPomidor.addEventListener('click', redBreak);
