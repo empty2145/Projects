@@ -1,0 +1,41 @@
+const form = document.getElementById('form');
+const firstnameInput = document.getElementById('firstname-input');
+const emailInput = document.getElementById('email-input');
+const passwordInput = document.getElementById('password-input');
+const repeatpasswordInput = document.getElementById('repeat-password-input');
+const errorMessage = document.getElementById('error-message')
+
+
+form.addEventListener('submit', (e) => {
+    let errors = [];
+    if (firstnameInput) {
+        errors = getSignupFormErrors(firstnameInput.value, emailInput.value, passwordInput.value, repeatpasswordInput.value);
+    } else {
+        errors = getLoginFormErrors(emailInput.value, passwordInput.value)
+    }
+
+    if (errors.length > 0) {
+        e.preventDefault();
+        errorMessage.innerText = errors.join(". ");
+    }
+    console.log("✅ JS loaded")
+})
+
+function getSignupFormErrors(firstname, email, password, repeatPassword) {
+    let errors = [];
+    if (firstname === '' || firstname == null) {
+        errors.push('Firstname is required');
+        firstnameInput.parentElement.classList.add('incorrect')
+    }
+    if (email === '' || email == null) {
+        errors.push('Email is required');
+        emailInput.parentElement.classList.add('incorrect')
+    }
+    if (password === '' || password == null) {
+        errors.push('Password is required');
+        passwordInput.parentElement.classList.add('incorrect')
+    }
+
+    console.log()
+    return errors;
+}
