@@ -4,9 +4,11 @@ const emailInput = document.getElementById('email-input');
 const passwordInput = document.getElementById('password-input');
 const repeatpasswordInput = document.getElementById('repeat-password-input');
 const errorMessage = document.getElementById('error-message')
+const submitButton = document.querySelector('.submitButton')
 
 
-form.addEventListener('submit', (e) => {
+submitButton.addEventListener('click', (e) => {
+    console.log("🔥 Form submit triggered");
     let errors = [];
     if (firstnameInput) {
         errors = getSignupFormErrors(firstnameInput.value, emailInput.value, passwordInput.value, repeatpasswordInput.value);
@@ -18,7 +20,6 @@ form.addEventListener('submit', (e) => {
         e.preventDefault();
         errorMessage.innerText = errors.join(". ");
     }
-    console.log("✅ JS loaded")
 })
 
 function getSignupFormErrors(firstname, email, password, repeatPassword) {
@@ -29,13 +30,45 @@ function getSignupFormErrors(firstname, email, password, repeatPassword) {
     }
     if (email === '' || email == null) {
         errors.push('Email is required');
-        emailInput.parentElement.classList.add('incorrect')
+        emailInput.parentElement.classList.add('incorrect');
     }
     if (password === '' || password == null) {
         errors.push('Password is required');
-        passwordInput.parentElement.classList.add('incorrect')
+        passwordInput.parentElement.classList.add('incorrect');
+    }
+    if (password.length < 8) {
+        errors.push('Password must have at least 8 characters');
+        passwordInput.parentElement.classList.add('incorrect');
+    }
+    if (password !== repeatPassword) {
+        errors.push('Password does not match repeated password');
+        repeatpasswordInput.parentElement.classList.add('incorrect');
+        passwordInput.parentElement.classList.add('incorrect');
     }
 
-    console.log()
     return errors;
 }
+
+function getLoginFormErrors(email, password) {
+    let errors = [];
+    if (email === '' || email == null) {
+        errors.push('Email is required');
+        emailInput.parentElement.classList.add('incorrect');
+    }
+    if (password === '' || password == null) {
+        errors.push('Password is required');
+        passwordInput.parentElement.classList.add('incorrect');
+    }
+
+    return errors;
+}
+const allInput = [firstnameInput, emailInput, passwordInput, repeatpasswordInput].filter(input => input != null);
+
+allInput.forEach(input => {
+    input.addEventListener('input', () => {
+        if (input.parentElement.classList.contains('incorrect')) {
+            input.parentElement.classList.remove('incorrect');
+            errorMessage.innerText = '';
+        }
+    })
+})
