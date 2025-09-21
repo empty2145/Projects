@@ -1,0 +1,32 @@
+body{
+    background-color: #06070b;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+
+}
+.card::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(#ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+}
