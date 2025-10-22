@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal value</title>
+</head>
+<body>
+    <script>
+        /*
+        const treeMinValue = (root) => {
+            let smallest = Infinity;
+            const stack = [ root ];
+            while (stack.length > 0) {
+                const current =  stack.pop();
+                if (current.val < smallest) smallest = current.val;
+
+                if (current.left) stack.push(current.left)
+                if (current.right) stack.push(current.right)    
+            }
+
+            return smallest;
+        }
+            */
+        /*
+        const treeMinValue = (root) => {
+            let smallest = Infinity;
+            const queue = [ root ];
+            while (queue.length > 0) {
+                const current =  stack.shift();
+                if (current.val < smallest) smallest = current.val;
+
+                if (current.left) stack.push(current.left)
+                if (current.right) stack.push(current.right)    
+            }
+
+            return smallest;
+        }
+            */
+        const treeMinValue = (root) => {
+            if (!root) return Infinity;
+            return Math.min(root.val, treeMinValue(root.left), treeMinValue(root.right));
+        }
+
+        const maxPathSum = (root) => {
+            if (!root) return -Infinity;
+            if(!root.left && !root.right) return root.val;
+            const maxChildPathSum = Math.max(maxPathSum(root.left), maxPathSum(root.right));
+            return root.val + maxChildPathSum;
+        }
+    </script>
+</body>
+</html>
