@@ -42,7 +42,7 @@
                 }
             }
         }*/
-
+        /*
         function makeIterator(arr) {
             var i = 0;
             return {
@@ -58,6 +58,15 @@
         iter.next();
         iter.next();
         iter.next();
+        */
+       var nums = [1, 5, 16];
+
+        var iter = nums[Symbol.iterator]();
+
+        console.log(iter.next()); // {value: 1, done: false}
+        console.log(iter.next()); // {value: 5, done: false}
+        console.log(iter.next()); // {value: 16, done: false}
+        console.log(iter.next()); // {value: undefined, done: true}
     </script>
 </body>
 </html>
