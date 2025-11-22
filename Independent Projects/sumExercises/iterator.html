@@ -13,13 +13,51 @@
             console.log(a)
         }*/
 
+        /*
         let array = [[1,2,3],[4,5,6],[7,8,9]]
         for (a of array) {
             for (b of a) {
                 console.log(b)
             }
+        }*/
+
+        var nums = [1, 5, 16];
+        /*
+        function makeIterator(nums) {
+            for (num of nums) {
+                console.log(`value: ${num}, done: ${!num}`)
+            }
+        };
+        makeIterator(nums);
+        */
+       /*
+        function makeIterator(nums) {
+            let i = 0
+            return {
+                next: function() {
+                    if (i > nums.length - 1) {
+                        return {value: undefined, done: true}
+                    }
+                    return {value: nums[i++], done: false}
+                }
+            }
+        }*/
+
+        function makeIterator(arr) {
+            var i = 0;
+            return {
+                next: function() {
+                    if (i > arr.length - 1)
+                        return {value: undefined, done: true}
+                    return {value: arr[i++], done: false}
+                }
+            }
         }
 
+        iter = makeIterator(nums);
+        iter.next();
+        iter.next();
+        iter.next();
     </script>
 </body>
 </html>
